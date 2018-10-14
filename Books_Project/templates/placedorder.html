@@ -1,0 +1,56 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Details</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	<script src="main.js"></script> -->
+	<style>
+		.header{
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body id="a">
+	<div class="container">
+		<div class="row well header">
+			<div class="col-md-11"><h4>Your order has Placed Successfully!!</h4></div>
+			<div class="col-md-1"><span class="glyphicon glyphicon-thumbs-up"></span></div>			
+		</div>
+		<div class="row">
+			<div class="btn-group">
+				<button type="button" class="btn btn-warning" onclick="showorder()">Show My Orders</button>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<script type="text/javascript">
+		function showorder(){
+			document.getElementById("a").innerHTML='<html>\
+			<body>\
+			<div class="container">\
+			<div class="row">\
+			<div class="col-md-4 well">\
+			<form action="/showorder" method="POST">\
+			<div class="form-group">\
+			<label>Name</label>\
+			<input type="text" name="name" class="form-control" id="name" placeholder="Name">\
+			</div>\
+			<div class="form-group">\
+			<label>Phone</label>\
+			<input type="text" name="phonenum" class="form-control" id="phone" placeholder="Phone">\
+			</div>\
+			<button type="submit" name="place order" class="btn btn-warning">Show orders</button>\
+			</form>\
+			</div>\
+			</div>\
+			</div>\
+			</body></html>';
+		}
+	</script>
+</body>
+</html>

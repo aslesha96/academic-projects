@@ -1,0 +1,63 @@
+<html id="x">
+<head>
+	<title>
+		Books
+	</title>
+</head>
+<body>
+	<div style="border-style: groove">
+		<div style="height:18%">
+				<span style="margin-left:35%;font-size:50; color:Teal">Problem Solving Books</span>
+				<span id="cart_value" style="margin-left: 9%" ></span>
+				<span id="cart_count" style="margin-left: 9%" ></span>
+				<span id="logout" style="margin-left: 12 %"></span>
+				<!-- <img src="D:\MSIT\WP\Books Project\flaskr\flaskr\templates\download.png" style="width: 100%;float: right"> -->
+		</div>
+		<center>
+		<div style="height:80%;width:90%;background-color:AliceBlue; grey;border-style: groove">
+		<div style="height: 100%;width: 40%;float: left">
+			<div style="height: 40%;width: 100%">
+				<div style="height: 100%;width: 50%;float: right">
+					<div style="height: 25%;width: 100%; color: slategrey">
+						<span id="author" style="font-size: 15;"></span>
+					</div>
+					<div style="height: 25%;width: 100%; color: slategrey">
+						<p id="price"></p>
+					</div>
+					<div style="height: 25%;width: 100%; color: slategrey">
+						<span id="publish" style="font-size: 15;"></span>
+					</div>
+						<span id="yrofpublish" style="font-size: 15;; color: slategrey"></span>
+				</div>
+						<span id="image"></span>
+
+			</div>
+			<div style="height: 30%;width: 100%">
+				<br>
+				<button id="prev" type="button" style="margin-left: 18%" onclick="Previous()">Previous</button><br><br>
+				<button id="nxt" type="button" style="margin-left: 22%" onclick="Next()">Next</button><br><br>
+				<button id="AddCart" style="margin-right: 35%" onclick="cartadd()">addd</button>
+			</div>
+					<span><br><br>
+						Web page developed by:
+						<br>Ch.Aslesha
+					</span>
+		</div>
+			<div style="height: 100%;width:60%;float: right">
+				<div  style="height: 20%;width: 100%">
+					<span id="title" style="font-size: 30; color: salmon "></span>
+				</div>
+				<div style="height: 60%;width: 100%">
+					<p id="description" style="font-size: 15;color:steelblue;"></p>
+				</div>
+					<span id="previewlink" style="float: left"></span>
+					<form action="http://127.0.0.1:5000/checkout" > 
+						<button id="check_out" style="font-size: 28" type="submit"> Check Out</button>
+					</form> 
+			</div>
+		</div>
+		</center>	
+	</div>
+<script type="text/javascript" src="{{ url_for('static',filename='book.js')}}"></script>
+</body>
+</html>
