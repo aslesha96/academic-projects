@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+        .actlink {
+            background-color: #f44336;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+
+        .actlink{
+            background-color: red;
+        }
+    </style>
+	<title>Successfully logged in</title>
+
+	<link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }} />
+</head>
+<body style="background-image:url(../static/images/modified.jpg)" background-size: 1366px 768px;>
+
+	<ul>
+    <li><a href="/HOME">Home</a></li>
+    <li><a href="/loginForm">Logout</a></li>
+</ul>
+ <form action="/loginForm" method="GET">
+	      <!-- <button style="border-radius: 75%;background-color: #acadaf;">log out</button> -->
+	      <center><h1>Welcome:{{mail}}</h1></center><br><br><br><br><br>
+	    </form>
+	    <div>
+<form action="/createactivity" method="POST">
+	<center><input type="text" name="activity_name" placeholder="Activity Name" required size="100" width="40%"><br><br><br>
+	<button style="border-radius: 75%;background-color: #76d611; padding: 32px 16px;">Create Activity</button></center><br><br><br>
+</form>
+</div>
+		{% for i in d%}
+			<!-- {{i.activity_names}} -->
+			<a class="actlink" href="{{'/transaction/%s'%i.activity_names}}">{{i.activity_names}}<br></a><br><br>
+		{% endfor %}
+
+</body>
+</html>

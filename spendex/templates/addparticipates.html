@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Registration</title>
+<link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }} />
+<link rel="stylesheet" href={{ url_for('static', filename='css/loginstyle.css') }} />
+</head>
+<body class="background" style="background-image:url(../static/images/modified.jpg)">
+<div class="login-page">
+  <div class="form" style="margin-top:20%">
+    <form class="register-form" action="/ADDPARTICIPATE" method="POST" >
+    	<center>
+       <h3 style="color: red; ">{{ error }}</h3>
+        <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required placeholder="username@domain.com">
+        <input type="text" name="mobile" id="mobile" pattern="[789][0-9]{9}" required placeholder="phone number">
+         <button style="background-color: green;border-radius: 50%">add</button>
+    </form>
+    <form action="/ADDPARTICIPATE" method="GET"><br><br>
+    <button>Back</button></center>
+    </form>
+
+  </div>
+</div>
+</body>
+</html>

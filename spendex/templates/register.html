@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Registration</title>
+<link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }} />
+<link rel="stylesheet" href={{ url_for('static', filename='css/loginstyle.css') }} />
+</head>
+<body style="height:233px; margin-top:150px; background-image:url(../static/images/modified.jpg); background-size: 1366px 768px;">
+<div class="login-page">
+  <div class="form">
+    <form class="register-form" action="/register" method="POST">
+        <center><p style="color:red;"> {{error}} </p>
+        <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required placeholder="username@domain.com"/>
+        <input type="password" name="password" id="password" required placeholder="password"/>
+        <input type="password" name="cpassword" id="cpassword" required placeholder="confirm password"/>
+        <button>create</button>
+      <p class="message"><a href="/loginForm">Sign In</a></p></center>
+    </form>
+  </div>
+</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title>Summary</title>
+		<link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }} />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body style="background-image:url(../static/images/modified.jpg)";>
+		<div>
+			<ul>
+    			<li><a href="/HOME">Home</a></li>
+    			<li><a href="/loginForm">Logout</a></li>
+			</ul>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3"><center><span>ParticipantID </span></center></div>
+				<div class="col-md-3"><center><span>Amount Spent</span></center></div>
+				<div class="col-md-3"><center><span>Due   </span></center></div>
+				<div class="col-md-3"><center><span>Pay  </span></center></div>
+			</div>
+			
+				{% for i,j in d.items() %}
+				<div class="row" style="border-style: solid;border-width: 1px;background-color:#F0F8F6">
+				<p><center>
+				{% for p in j %}
+					<div class="col-md-3">{{p}} </div>
+					<!-- <span>{{"    "}}</span> -->
+				{% endfor %}</center></p>
+				</div><br>
+				{% endfor %}
+			
+			
+				
+			
+			
+
+			
+		
+		</div>
+		</body>
+	</body>
+</html>

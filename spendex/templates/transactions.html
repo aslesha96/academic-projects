@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }} />
+</head>
+<body style="background-image:url(../static/images/modified.jpg)">
+    <ul>
+    <li><a href="/HOME">Home</a></li>
+    <li><a href="/loginForm">Logout</a></li>
+</ul>
+<div style="position: relative;margin-top:5%;align-items: center;">
+<form action="{{'/transaction/%s'%taskname}}" method= "post">
+      <dl>
+        <dt>EMAIL:
+        <dd><input type=email size=30 name=email placeholder="username@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+        <dt>DESCRIPTION:
+        <dd><input type=text size=30 name=product placeholder="ITEM DESCRIPTION">
+        <dt>Price:
+        <dd><input type=text size=30 name=price placeholder="AMOUNT SPENT">
+          <br><br>
+        <dd><button style="border-radius: 75%;background-color: #aefc67">Share</button>
+      </dl>
+    </form>
+<form action="/summary" method="post">
+  <button style="background-color: #efa717;border-radius: 50%">Summary</button>
+</form>
+</div>
+    {% for i in transac %}
+      <p style="background-color: #f7efca;position: relative;text-align: center;">{{i.buyer_email}}  spent for {{ i.product }} amount {{ i.price}}</p>
+      {% endfor %}
+
+   <div>
+      {{error}}
+        <div style="background-color: #b5f2ec">
+    {% for i in comment %}
+    <p>{{i.participant_id}} commented {{ i.comments}}</p>
+      {% endfor %}
+        </div>
+    </div>
+    <form action="/chat" method="POST">
+        <input name=comment type="text" size="63" >
+        <input type="submit" value="Comment" >
+    </form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+ <html>
+<head>
+<title>Create Activity</title>
+    <link rel="stylesheet" href={{ url_for('static', filename='css/style.css') }} />
+</head>
+<body class="background" style="background-image:url(../static/images/modified.jpg); background-size: 1366px 768px;">
+  <ul>
+    <li><a href="/HOME">Home</a></li>
+    <li><a href="/loginForm">Logout</a></li>
+</ul>
+		{{activity_name}}
+		{{error}}
+		<div><center>
+			<h1><b>{{name}}</b></h1>
+		</center></div>
+<div>
+
+    <form  action="/addparticipates" method="GET">
+      <center><button style="border-radius: 50%;background-color: #F8DB37; padding: 32px 16px;">+ addparticipates</button><br><br>
+    </form>
+    <form class="register-form" action="/HOME" method="GET">
+        <button style="border-radius: 50%;background-color: #F8DB37; padding: 22px 10px; ">create</button>
+    </center></form>
+</div>
+</body>
+</html>
